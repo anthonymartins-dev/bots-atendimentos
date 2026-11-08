@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+
+  --color-paper: #f6f4ef;
+  --color-card: #fdfcf9;
+  --color-line: #e4e0d6;
+  --color-ink: #1d1c19;
+  --color-muted: #77736a;
+  --color-brand: #24493c;
+  --color-brand-hover: #1b392f;
+  --color-brand-soft: #e3ece7;
+  --color-warn: #8a5a14;
+  --color-warn-soft: #f4e8d2;
+  --color-danger: #a63a2b;
+  --color-danger-soft: #f6e4e0;
+  --color-info: #3b5a7a;
+  --color-info-soft: #e1e9f1;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes entrar {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animar {
+  animation: subir 0.22s ease-out;
+}
+
+.painel {
+  animation: entrar 0.22s ease-out;
+}

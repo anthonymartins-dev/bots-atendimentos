@@ -66,6 +66,8 @@ BEGIN
 
     (4, 'cliente', 'Qual é o horário?', NULL, NOW() - INTERVAL '1 day 1 hour'),
     (4, 'bot', 'Estamos abertos de segunda a sábado, das 9h às 19h. Ao domingo estamos fechados.', 'simulado', NOW() - INTERVAL '1 day 1 hour'),
+    (4, 'cliente', 'E têm cactos grandes, com mais de 1 metro?', NULL, NOW() - INTERVAL '1 day 50 minutes'),
+    (4, 'humano', 'Temos sim! Passa na loja ou diz-nos a altura que procuras e reservamos um para ti.', 'simulado', NOW() - INTERVAL '1 day 40 minutes'),
     (4, 'cliente', 'Obrigada!', NULL, NOW() - INTERVAL '1 day'),
     (4, 'bot', 'De nada! Se precisares de mais alguma coisa, é só escrever.', 'simulado', NOW() - INTERVAL '1 day'),
 
