@@ -141,6 +141,24 @@ um teste final com elas.
 | GET, POST | `/webhooks/whatsapp`, `/webhooks/instagram` | Webhooks da Meta |
 | POST | `/webhooks/telegram` | Webhook do Telegram |
 
+## Pôr online
+
+Tudo com planos gratuitos e login pelo GitHub.
+
+1. **Base de dados (Neon):** cria um projeto em neon.tech e copia o endereço de ligação (`postgresql://...`). Depois, no teu computador:
+
+   ```bash
+   cd server
+   DATABASE_URL="<endereço do Neon>" npm run db:preparar
+   ```
+
+2. **API (Render):** em render.com escolhe *New, Blueprint* e liga este repositório (usa o `render.yaml`). Preenche `DATABASE_URL` com o endereço do Neon. Deixa `CORS_ORIGIN` vazio por agora.
+3. **Site (Vercel):** em vercel.com importa o repositório, define a pasta raiz como `client` e a variável `VITE_API_URL` com o endereço da API do Render (sem barra no fim).
+4. **Fecha o ciclo:** volta ao Render e põe em `CORS_ORIGIN` o endereço do site da Vercel.
+
+A API gratuita do Render adormece ao fim de 15 minutos sem uso e demora cerca de 30 segundos a acordar no primeiro pedido.
+Para repor os dados de demonstração: `npm run db:preparar -- --repor` (apaga tudo nessa base).
+
 ## Estrutura
 
 ```

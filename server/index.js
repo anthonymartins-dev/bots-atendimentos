@@ -14,7 +14,13 @@ types.setTypeParser(1700, parseFloat);
 
 const app = express();
 app.disable('x-powered-by');
-app.use(cors());
+// Em produção, CORS_ORIGIN lista os endereços do site (separados por vírgulas).
+// Sem ela (desenvolvimento), aceita qualquer origem.
+const origens = (process.env.CORS_ORIGIN || '').split(',').map((o) => o.trim()).filter(Boolean);
+app.use(cors(origens.length ? { origin: origens } : undefined));
+
+// Usado pelo alojamento para saber se a API está viva.
+app.get('/health', (req, res) => res.json({ ok: true }));
 // Guarda o corpo tal como chegou: a assinatura da Meta calcula-se sobre ele.
 app.use(express.json({ verify: (req, _res, corpo) => { req.rawBody = corpo; } }));
 
