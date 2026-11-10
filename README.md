@@ -5,6 +5,8 @@ Um assistente que responde às perguntas frequentes dos clientes no **Telegram**
 única, e há um simulador para experimentar sem contas nas redes. Projeto 6 de uma série de 6
 ferramentas para pequenos negócios.
 
+![Captura de ecrã](docs/painel.png)
+
 ## Funcionalidades
 
 - **Caixa de entrada única** com as conversas dos três canais, pesquisa, filtros e contagem de mensagens por ler
